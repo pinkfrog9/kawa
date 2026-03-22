@@ -17,6 +17,7 @@ class PermanentStorage {
   private enum StorageKey: String {
     case showsNotification = "show-notification"
     case launchedForTheFirstTime = "launched-for-the-first-time"
+    case hidesMenuBarIcon = "hide-menu-bar-icon"
   }
 
   static var showsNotification: Bool {
@@ -34,6 +35,15 @@ class PermanentStorage {
     }
     set {
       set(newValue, forKey: .launchedForTheFirstTime)
+    }
+  }
+
+  static var hidesMenuBarIcon: Bool {
+    get {
+      return object(forKey: .hidesMenuBarIcon, withDefault: false)
+    }
+    set {
+      set(newValue, forKey: .hidesMenuBarIcon)
     }
   }
 }

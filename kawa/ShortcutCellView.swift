@@ -9,6 +9,7 @@ class ShortcutCellView: NSTableCellView {
   func setInputSource(_ inputSource: InputSource) {
     self.inputSource = inputSource
     shortcutKey = inputSource.id.replacingOccurrences(of: ".", with: "-")
+    shortcutView.shortcutValidator.allowAnyShortcutWithOptionModifier = true
     shortcutView.associatedUserDefaultsKey = shortcutKey!
     shortcutView.shortcutValueChange = self.shortcutValueDidChange
     MASShortcutBinder.shared().bindShortcut(withDefaultsKey: shortcutKey!, toAction: selectInput)

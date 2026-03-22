@@ -158,6 +158,17 @@
                                                 <action selector="showNotification:" target="8tD-vA-uhk" id="mcp-CO-SfQ"/>
                                             </connections>
                                         </button>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMB-zk-1PQ">
+                                            <rect key="frame" x="14" y="74" width="382" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Hide menu bar icon" bezelStyle="regularSquare" imagePosition="left" inset="2" id="kLm-n3-8PV">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hideMenuBarIcon:" target="8tD-vA-uhk" id="qRz-4m-7YP"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </view>
                             </box>
@@ -176,6 +187,7 @@
                     </view>
                     <connections>
                         <outlet property="showNotificationCheckbox" destination="Ix0-UJ-v3V" id="HxT-bb-QrP"/>
+                        <outlet property="hideMenuBarIconCheckbox" destination="hMB-zk-1PQ" id="pLz-9a-3rK"/>
                     </connections>
                 </viewController>
                 <customObject id="YAB-W8-ond" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

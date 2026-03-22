@@ -17,6 +17,12 @@ class StatusBar {
     button.image = buttonImage
     button.appearsDisabled = false;
     button.toolTip = "Click to open preferences"
+
+    updateVisibility()
+  }
+
+  func updateVisibility() {
+    item.isVisible = !PermanentStorage.hidesMenuBarIcon
   }
 
   @objc func action(_ sender: NSButton) {
