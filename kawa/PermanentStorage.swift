@@ -18,6 +18,7 @@ class PermanentStorage {
     case showsNotification = "show-notification"
     case launchedForTheFirstTime = "launched-for-the-first-time"
     case hidesMenuBarIcon = "hide-menu-bar-icon"
+    case launchAtLogin = "launch-at-login"
   }
 
   static var showsNotification: Bool {
@@ -44,6 +45,15 @@ class PermanentStorage {
     }
     set {
       set(newValue, forKey: .hidesMenuBarIcon)
+    }
+  }
+
+  static var launchAtLogin: Bool {
+    get {
+      return object(forKey: .launchAtLogin, withDefault: true)
+    }
+    set {
+      set(newValue, forKey: .launchAtLogin)
     }
   }
 }

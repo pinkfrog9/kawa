@@ -1,4 +1,5 @@
 import Cocoa
+import ServiceManagement
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -9,6 +10,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     if PermanentStorage.launchedForTheFirstTime {
       PermanentStorage.launchedForTheFirstTime = false
+      registerLoginItem(enabled: PermanentStorage.launchAtLogin)
+    }
+  }
+
+  private func registerLoginItem(enabled: Bool) {
+    if #available(macOS 13.0, *) {
+      do {
+        if enabled {
+          try SMAppService.mainApp.register()
+        } else {
+          try SMAppService.mainApp.unregister()
+        }
+      } catch {
+        NSLog("Failed to \(enabled ? "enable" : "disable") launch at login: \(error)")
+      }
+    } else {
+      SMLoginItemSetEnabled("com.utatti.kawa" as CFString, enabled)
     }
   }
 

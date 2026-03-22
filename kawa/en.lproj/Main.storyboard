@@ -169,6 +169,17 @@
                                                 <action selector="hideMenuBarIcon:" target="8tD-vA-uhk" id="qRz-4m-7YP"/>
                                             </connections>
                                         </button>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lAL-xk-2QP">
+                                            <rect key="frame" x="14" y="50" width="382" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Launch at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="mNL-r4-5TQ">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="launchAtLogin:" target="8tD-vA-uhk" id="rTz-5n-8YQ"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </view>
                             </box>
@@ -188,6 +199,7 @@
                     <connections>
                         <outlet property="showNotificationCheckbox" destination="Ix0-UJ-v3V" id="HxT-bb-QrP"/>
                         <outlet property="hideMenuBarIconCheckbox" destination="hMB-zk-1PQ" id="pLz-9a-3rK"/>
+                        <outlet property="launchAtLoginCheckbox" destination="lAL-xk-2QP" id="qMz-6b-4SK"/>
                     </connections>
                 </viewController>
                 <customObject id="YAB-W8-ond" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
